@@ -1,0 +1,2975 @@
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 1
+  },
+  "id": 14,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": false,
+  "linewidth": 1,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "water_level"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "warning",
+      "fill": true,
+      "line": true,
+      "op": "lt",
+      "value": 70
+    },
+    {
+      "colorMode": "critical",
+      "fill": true,
+      "line": true,
+      "op": "lt",
+      "value": 46
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Water Level",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 1
+  },
+  "id": 13,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "water_level"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "value": 70,
+      "colorMode": "warning",
+      "op": "lt",
+      "fill": true,
+      "line": true
+    },
+    {
+      "value": 46,
+      "colorMode": "critical",
+      "op": "lt",
+      "fill": true,
+      "line": true
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Water Level Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 1,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 11
+  },
+  "id": 4,
+  "legend": {
+    "alignAsTable": false,
+    "avg": false,
+    "current": true,
+    "hideEmpty": false,
+    "hideZero": false,
+    "max": false,
+    "min": false,
+    "rightSide": false,
+    "show": false,
+    "total": false,
+    "values": true
+  },
+  "lines": false,
+  "linewidth": 1,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "hide": false,
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "B",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "pH"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "critical",
+      "fill": false,
+      "line": true,
+      "op": "gt",
+      "value": 7
+    },
+    {
+      "colorMode": "warning",
+      "fill": false,
+      "line": true,
+      "op": "gt",
+      "value": 6.49
+    },
+    {
+      "colorMode": "warning",
+      "fill": false,
+      "line": true,
+      "op": "lt",
+      "value": 5.49
+    },
+    {
+      "colorMode": "critical",
+      "fill": false,
+      "line": true,
+      "op": "lt",
+      "value": 5
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "pH level",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": "15",
+      "min": "0",
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 11
+  },
+  "id": 5,
+  "legend": {
+    "alignAsTable": false,
+    "avg": false,
+    "current": true,
+    "hideEmpty": false,
+    "hideZero": false,
+    "max": false,
+    "min": false,
+    "rightSide": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "hide": false,
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "B",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "pH"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "value": 7,
+      "colorMode": "critical",
+      "op": "gt",
+      "fill": false,
+      "line": true
+    },
+    {
+      "value": 6.49,
+      "colorMode": "warning",
+      "op": "gt",
+      "fill": false,
+      "line": true
+    },
+    {
+      "value": 5,
+      "colorMode": "critical",
+      "op": "lt",
+      "fill": false,
+      "line": true
+    },
+    {
+      "value": 5.49,
+      "colorMode": "warning",
+      "op": "lt",
+      "fill": false,
+      "line": true
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "pH level Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": "15",
+      "min": "0",
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 21
+  },
+  "id": 16,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": false,
+    "total": false,
+    "values": false
+  },
+  "lines": false,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_1"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "critical",
+      "fill": true,
+      "line": true,
+      "op": "gt",
+      "value": 3
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 1",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 21
+  },
+  "id": 21,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": false
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_1"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "value": 3,
+      "colorMode": "critical",
+      "op": "gt",
+      "fill": true,
+      "line": true
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 1 Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 30
+  },
+  "id": 22,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": false,
+    "total": false,
+    "values": false
+  },
+  "lines": false,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_2"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "critical",
+      "fill": true,
+      "line": true,
+      "op": "gt",
+      "value": 3
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 2",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 30
+  },
+  "id": 23,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": false
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_2"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "value": 3,
+      "colorMode": "critical",
+      "op": "gt",
+      "fill": true,
+      "line": true
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 2 Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 39
+  },
+  "id": 24,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": false,
+    "total": false,
+    "values": false
+  },
+  "lines": false,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_3"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "critical",
+      "fill": true,
+      "line": true,
+      "op": "gt",
+      "value": 3
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 3",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 39
+  },
+  "id": 25,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": false
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_3"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "value": 3,
+      "colorMode": "critical",
+      "op": "gt",
+      "fill": true,
+      "line": true
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 3 Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 48
+  },
+  "id": 26,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": false,
+    "total": false,
+    "values": false
+  },
+  "lines": false,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_4"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "critical",
+      "fill": true,
+      "line": true,
+      "op": "gt",
+      "value": 3
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 4",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "Rhok_18_Growing_Futures",
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 48
+  },
+  "id": 27,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": false
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "light_status_4"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "value": 3,
+      "colorMode": "critical",
+      "op": "gt",
+      "fill": true,
+      "line": true
+    }
+  ],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Light Status 4 Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 58
+  },
+  "id": 30,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": false,
+  "linewidth": 1,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "flow_status"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Flow Status",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 58
+  },
+  "id": 31,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "flow_status"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Flow Status Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 68
+  },
+  "id": 17,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": false,
+  "linewidth": 1,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "air_humidity"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Air Humidity",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 68
+  },
+  "id": 19,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "air_humidity"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Air Humidity Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 78
+  },
+  "id": 18,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": false,
+  "linewidth": 1,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "air_temp"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Air Temperature",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 78
+  },
+  "id": 20,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "air_temp"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Air Temperature Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": true,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 88
+  },
+  "id": 28,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": false,
+  "linewidth": 1,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "water_temp"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Water Temperature",
+  "tooltip": {
+    "shared": false,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "series",
+    "name": null,
+    "show": true,
+    "values": [
+      "current"
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "aliasColors": {},
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": null,
+  "fill": 0,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 88
+  },
+  "id": 29,
+  "legend": {
+    "avg": false,
+    "current": true,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": true
+  },
+  "lines": true,
+  "linewidth": 3,
+  "links": [],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "$tag_towerName",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "towerName"
+          ],
+          "type": "tag"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "TowerData",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "water_temp"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "thresholds": [],
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "Water Temperature Graph",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": []
+  },
+  "yaxes": [
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": false
+    }
+  ]
+}
+
+{
+  "columns": [],
+  "datasource": null,
+  "fontSize": "100%",
+  "gridPos": {
+    "h": 8,
+    "w": 24,
+    "x": 0,
+    "y": 98
+  },
+  "id": 9,
+  "links": [],
+  "pageSize": null,
+  "scroll": true,
+  "showHeader": true,
+  "sort": {
+    "col": 1,
+    "desc": false
+  },
+  "styles": [
+    {
+      "alias": "Time",
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "pattern": "Time",
+      "type": "date"
+    },
+    {
+      "alias": "",
+      "colorMode": null,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 2,
+      "pattern": "/.*/",
+      "thresholds": [],
+      "type": "number",
+      "unit": "short"
+    }
+  ],
+  "targets": [
+    {
+      "alias": "$col",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "none"
+          ],
+          "type": "fill"
+        }
+      ],
+      "hide": false,
+      "measurement": "TowerData",
+      "orderByTime": "DESC",
+      "policy": "default",
+      "query": "SELECT  last(\"towerName\") as \"Tower Name\", last(\"towerGroup\") as \"Tower Group\", last(\"air_humidity\") as \"Air Humidity\", last(\"air_temp\") as \"Air Temp\",  last(\"water_temp\") as \"Air Temp\", last(\"flow_status\") as \"Flow Status\", last(\"light_status_1\") as \"Light Status 1\", last(\"light_status_2\") as \"Light Status 2\", last(\"light_status_3\") as \"Light Status 3\", last(\"light_status_4\") as \"Light Status 4\", last(\"pH\") as \"pH\", last(\"water_level\") as \"Water Level\"  FROM \"TowerData\" WHERE (\"towerGroup\" =~ /^$towerGroup$/ AND \"towerName\" =~ /^$towerName$/) AND $timeFilter GROUP BY time($__interval) fill(none) ORDER BY time DESC",
+      "rawQuery": true,
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "/^$towerName$/"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "/^$towerGroup$/"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "air_humidity"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "air_temp"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "flow_status"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "light_status_0"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "light_status_1"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "pH"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ],
+        [
+          {
+            "params": [
+              "water_level"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "towerGroup",
+          "operator": "=~",
+          "value": "/^$towerGroup$/"
+        },
+        {
+          "condition": "AND",
+          "key": "towerName",
+          "operator": "=~",
+          "value": "/^$towerName$/"
+        }
+      ]
+    }
+  ],
+  "title": "Overall Data",
+  "transform": "timeseries_to_columns",
+  "type": "table"
+}
+
+{
+  "gridPos": {
+    "h": 8,
+    "w": 24,
+    "x": 0,
+    "y": 107
+  },
+  "id": 11,
+  "limit": 10,
+  "links": [],
+  "onlyAlertsOnDashboard": false,
+  "show": "current",
+  "sortOrder": 1,
+  "stateFilter": [],
+  "title": "Alert List",
+  "type": "alertlist"
+}
