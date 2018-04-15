@@ -52,7 +52,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1523803970988,
+  "iteration": 1523808319427,
   "links": [],
   "panels": [
     {
@@ -600,7 +600,7 @@
           "value": "4"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -731,7 +731,7 @@
           "value": "4"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -862,7 +862,7 @@
           "value": "4"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -993,7 +993,7 @@
           "value": "4"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     }
   ],
   "refresh": "5s",
@@ -1056,5 +1056,5 @@
   "timezone": "",
   "title": "Basic View",
   "uid": "jrDNd7Zmz",
-  "version": 7
+  "version": 8
 }
