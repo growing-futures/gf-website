@@ -40,7 +40,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1523808547014,
+  "iteration": 1523809209770,
   "links": [],
   "panels": [
     {
@@ -328,8 +328,8 @@
               "format": "percent",
               "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "150",
+              "min": "-25",
               "show": true
             },
             {
@@ -2000,7 +2000,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -2124,11 +2124,12 @@
           },
           "yaxes": [
             {
+              "decimals": null,
               "format": "short",
               "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "10",
+              "min": "0",
               "show": true
             },
             {
@@ -2261,7 +2262,7 @@
             "buckets": null,
             "mode": "series",
             "name": null,
-            "show": true,
+            "show": false,
             "values": [
               "current"
             ]
@@ -2272,7 +2273,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -2400,7 +2401,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -2533,7 +2534,7 @@
             "buckets": null,
             "mode": "series",
             "name": null,
-            "show": true,
+            "show": false,
             "values": [
               "current"
             ]
@@ -2544,7 +2545,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -2672,7 +2673,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -2807,7 +2808,7 @@
             "buckets": null,
             "mode": "series",
             "name": null,
-            "show": true,
+            "show": false,
             "values": [
               "current"
             ]
@@ -2818,7 +2819,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -2946,7 +2947,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -3356,7 +3357,7 @@
     ]
   },
   "timezone": "",
-  "title": "Advanced View",
+  "title": "GrowingFutures_Pres",
   "uid": "9Domd7Zmz",
-  "version": 90
+  "version": 94
 }
