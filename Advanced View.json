@@ -21,12 +21,6 @@
       "id": "influxdb",
       "name": "InfluxDB",
       "version": "5.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": "5.0.0"
     }
   ],
   "annotations": {
@@ -46,7 +40,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1523805039085,
+  "iteration": 1523808547014,
   "links": [],
   "panels": [
     {
@@ -2766,6 +2760,8 @@
               "measurement": "TowerData",
               "orderByTime": "ASC",
               "policy": "default",
+              "query": "SELECT last(\"water_temp\"), \"/^$towerName$/\" FROM \"TowerData\" WHERE (\"towerGroup\" =~ /^$towerGroup$/ AND \"towerName\" =~ /^$towerName$/) AND $timeFilter GROUP BY time($__interval), \"towerName\" fill(previous)",
+              "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -2968,7 +2964,7 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2976,277 +2972,279 @@
         "y": 7
       },
       "id": 47,
-      "panels": [],
+      "panels": [
+        {
+          "columns": [],
+          "datasource": "Rhok_18_Growing_Futures",
+          "fontSize": "100%",
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 8
+          },
+          "id": 9,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": false
+          },
+          "styles": [
+            {
+              "alias": "Time",
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "alias": "",
+              "colorMode": "cell",
+              "colors": [
+                "#64C204",
+                "#ff6666",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 0,
+              "link": false,
+              "pattern": "/Light Status */",
+              "thresholds": [
+                "2.5"
+              ],
+              "type": "number",
+              "unit": "short"
+            },
+            {
+              "alias": "",
+              "colorMode": "cell",
+              "colors": [
+                "#ff6666",
+                "#64C204",
+                "#809BC8"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 1,
+              "pattern": "pH",
+              "thresholds": [
+                "5.5",
+                "6.5"
+              ],
+              "type": "number",
+              "unit": "short"
+            },
+            {
+              "alias": "Pump Pressure",
+              "colorMode": "cell",
+              "colors": [
+                "#ff6666",
+                "#64C204",
+                "#809BC8"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 2,
+              "pattern": "Flow Status",
+              "thresholds": [
+                "5",
+                "7.5"
+              ],
+              "type": "number",
+              "unit": "short"
+            },
+            {
+              "alias": "Pump Resevoir",
+              "colorMode": "cell",
+              "colors": [
+                "#ff6666",
+                "rgba(237, 129, 40, 0.89)",
+                "#64C204"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 0,
+              "pattern": "Water Level",
+              "thresholds": [
+                "0",
+                " 23"
+              ],
+              "type": "number",
+              "unit": "short"
+            },
+            {
+              "alias": "",
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "alias": "$col",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "TowerData",
+              "orderByTime": "DESC",
+              "policy": "default",
+              "query": "SELECT \"towerName\" as \"Tower Name\", \"towerGroup\" as \"Tower Group\", \"air_humidity\" as \"Air Humidity\", \"air_temp\" as \"Air Temp\",  \"water_temp\" as \"Water Temp\", \"flow_status\" as \"Flow Status\", \"light_status_1\" as \"Light Status 1\", \"light_status_2\" as \"Light Status 2\", \"light_status_3\" as \"Light Status 3\", \"light_status_4\" as \"Light Status 4\", \"pH\" as \"pH\", \"water_level\" as \"Water Level\" FROM \"TowerData\" WHERE (\"towerGroup\" =~ /^$towerGroup$/ AND \"towerName\" =~ /^$towerName$/) AND $timeFilter ORDER BY time DESC",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table",
+              "scenarioId": "random_walk",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "/^$towerName$/"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "/^$towerGroup$/"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "air_humidity"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "air_temp"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "flow_status"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "light_status_0"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "light_status_1"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "pH"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ],
+                [
+                  {
+                    "params": [
+                      "water_level"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "towerGroup",
+                  "operator": "=~",
+                  "value": "/^$towerGroup$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "towerName",
+                  "operator": "=~",
+                  "value": "/^$towerName$/"
+                }
+              ]
+            }
+          ],
+          "title": "Overall Data",
+          "transform": "table",
+          "type": "table"
+        }
+      ],
       "title": "Overall",
       "type": "row"
-    },
-    {
-      "columns": [],
-      "datasource": "${DS_RHOK_18_GROWING_FUTURES}",
-      "fontSize": "100%",
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 8
-      },
-      "id": 9,
-      "links": [],
-      "pageSize": null,
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 1,
-        "desc": false
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "Time",
-          "type": "date"
-        },
-        {
-          "alias": "",
-          "colorMode": "cell",
-          "colors": [
-            "#64C204",
-            "#ff6666",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "link": false,
-          "pattern": "/Light Status */",
-          "thresholds": [
-            "2.5"
-          ],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "colorMode": "cell",
-          "colors": [
-            "#ff6666",
-            "#64C204",
-            "#809BC8"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "pattern": "pH",
-          "thresholds": [
-            "5.5",
-            "6.5"
-          ],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "Pump Pressure",
-          "colorMode": "cell",
-          "colors": [
-            "#ff6666",
-            "#64C204",
-            "#809BC8"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Flow Status",
-          "thresholds": [
-            "5",
-            "7.5"
-          ],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "Pump Resevoir",
-          "colorMode": "cell",
-          "colors": [
-            "#ff6666",
-            "rgba(237, 129, 40, 0.89)",
-            "#64C204"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "pattern": "Water Level",
-          "thresholds": [
-            "0",
-            " 23"
-          ],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "pattern": "/.*/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
-      "targets": [
-        {
-          "alias": "$col",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "hide": false,
-          "measurement": "TowerData",
-          "orderByTime": "DESC",
-          "policy": "default",
-          "query": "SELECT  last(\"towerName\") as \"Tower Name\", last(\"towerGroup\") as \"Tower Group\", last(\"air_humidity\") as \"Air Humidity\", last(\"air_temp\") as \"Air Temp\",  last(\"water_temp\") as \"Water Temp\", last(\"flow_status\") as \"Flow Status\", last(\"light_status_1\") as \"Light Status 1\", last(\"light_status_2\") as \"Light Status 2\", last(\"light_status_3\") as \"Light Status 3\", last(\"light_status_4\") as \"Light Status 4\", last(\"pH\") as \"pH\", last(\"water_level\") as \"Water Level\"  FROM \"TowerData\" WHERE (\"towerGroup\" =~ /^$towerGroup$/ AND \"towerName\" =~ /^$towerName$/) AND $timeFilter GROUP BY time($__interval) fill(none) ORDER BY time DESC",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "/^$towerName$/"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "/^$towerGroup$/"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "air_humidity"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "air_temp"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "flow_status"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "light_status_0"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "light_status_1"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "pH"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "water_level"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "towerGroup",
-              "operator": "=~",
-              "value": "/^$towerGroup$/"
-            },
-            {
-              "condition": "AND",
-              "key": "towerName",
-              "operator": "=~",
-              "value": "/^$towerName$/"
-            }
-          ]
-        }
-      ],
-      "title": "Overall Data",
-      "transform": "timeseries_to_columns",
-      "type": "table"
     },
     {
       "collapsed": true,
@@ -3254,7 +3252,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 8
       },
       "id": 45,
       "panels": [
@@ -3360,5 +3358,5 @@
   "timezone": "",
   "title": "Advanced View",
   "uid": "9Domd7Zmz",
-  "version": 87
+  "version": 90
 }
